@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona Beauty Studio</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: #fff5f7;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #f8c1c6, #f3a0a5);
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            font-size: 1.5em;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        .services {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .services h2 {
+            text-align: center;
+            color: #f8a0a5;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-form {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            color: #f8a0a5;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #f3a0a5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .contact-form button:hover {
+            background: #d98893;
+        }
+        .call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f3a0a5;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .call-button:hover {
+            background: #d98893;
+        }
+        footer {
+            background: #f8c1c6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mona Beauty Studio</h1>
+    <p>Luxurious beauty treatments tailored for you</p>
+</header>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li><span>Manicure</span><span>$30</span></li>
+        <li><span>Pedicure</span><span>$40</span></li>
+        <li><span>Facial Treatment</span><span>$50</span></li>
+        <li><span>Hair Styling</span><span>$70</span></li>
+        <li><span>Makeup</span><span>$80</span></li>
+    </ul>
+</section>
+
+<section class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="query-type">Type of Request:</label>
+        <select id="query-type" name="query-type" required>
+            <option value="appointment">Appointment</option>
+            <option value="question">Question</option>
+        </select>
+
+        <div id="appointment-details" style="display: none;">
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service">
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<button class="call-button" onclick="callStudio()">Call Us</button>
+
+<footer>
+    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    <p>
+        Follow us:
+        <a href="https://instagram.com/yourstudio" target="_blank">Instagram</a>
+        <a href="https://facebook.com/yourstudio" target="_blank">Facebook</a>
+        <a href="https://twitter.com/yourstudio" target="_blank">Twitter</a>
+    </p>
+</footer>
+
+<script>
+    // Toggle appointment details
+    document.getElementById('query-type').addEventListener('change', function () {
+        const appointmentDetails = document.getElementById('appointment-details');
+        if (this.value === 'appointment') {
+            appointmentDetails.style.display = 'block';
+        } else {
+            appointmentDetails.style.display = 'none';
+        }
+    });
+
+    // Call studio function
+    function callStudio() {
+        window.location.href = 'tel:+1234567890';
+    }
+</script>
+
+</body>
+</html>
